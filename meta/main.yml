@@ -1,0 +1,22 @@
+---
+dependencies:
+    - cloudcxn.usuarios
+
+galaxy_info:
+    author: "Byron Quezada"
+    company: "Cloud CxN"
+    description: "Configuración de SSH en Debian"
+  
+    galaxy_tags:
+        - raspbian
+        - ssh
+  
+    license: MIT
+    min_ansible_version: 2.1
+  
+    platforms:
+        - name: Debian
+          versions:
+              - bullseye
+  
+    role_name: "ssh"
