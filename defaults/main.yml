@@ -1,4 +1,4 @@
 ---
-ssh_admin: "{{ usuarios_administrador }}"
 ssh_llave_admin: "ssh-rsa AAAAadministrador"
+ssh_admin: "administrador"
 ssh_puerto: 22
