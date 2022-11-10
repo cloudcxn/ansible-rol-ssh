@@ -11,7 +11,6 @@
       path: "/etc/ssh/sshd_config"
       search_string: "Port"
       line: "Port {{ ssh_puerto }}"
-  loop: "{{ ssh_llaves_admin }}"
 
 - name: "Crear el directorio de configuración para el administrador"
   ansible.builtin.file:
