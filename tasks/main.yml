@@ -11,6 +11,7 @@
     path: "/etc/ssh/sshd_config"
     search_string: "Port"
     line: "Port {{ ssh_puerto }}"
+  notify: "Reiniciar el servicio"
 
 - name: "Crear el directorio de configuración para el administrador"
   ansible.builtin.file:
