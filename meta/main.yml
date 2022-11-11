@@ -1,6 +1,7 @@
 ---
 dependencies:
-    - cloudcxn.usuarios
+    - role: cloudcxn.usuarios
+      version: "0.5.0"
 
 galaxy_info:
     author: "Byron Quezada"
