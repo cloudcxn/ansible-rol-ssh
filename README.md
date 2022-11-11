@@ -26,9 +26,10 @@ Libro de Ejemplo
 ----------------
 
 ```yaml
+---
 - hosts: servers
   roles:
-      - cloudcxn.ssh
+    - cloudcxn.ssh
 ```
 
 Licencia

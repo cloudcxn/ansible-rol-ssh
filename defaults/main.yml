@@ -1,4 +1,6 @@
 ---
-ssh_admin: "{{ usuarios_administrador }}"
-ssh_llave_admin: "ssh-rsa AAAAadministrador"
+ssh_admin: "administrador"
+ssh_llaves_admin:
+    - "ssh-rsa AAAA_primera_llave_del_administrador"
+    - "ssh-rsa AAAA_segunda_llave_del_administrador"
 ssh_puerto: 22

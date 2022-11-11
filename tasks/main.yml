@@ -8,26 +8,26 @@
 
 - name: "Configurar el puerto"
   ansible.builtin.lineinfile:
-      path: "/etc/ssh/sshd_config"
-      search_string: "Port"
-      line: "Port {{ ssh_puerto }}"
-  loop: "{{ ssh_llaves_admin }}"
+    path: "/etc/ssh/sshd_config"
+    search_string: "Port"
+    line: "Port {{ ssh_puerto }}"
+  notify: "Reiniciar el servicio"
 
 - name: "Crear el directorio de configuración para el administrador"
   ansible.builtin.file:
-      group: "{{ ssh_admin }}"
-      mode: 0700
-      path: "/home/{{ ssh_admin }}/.ssh"
-      owner: "{{ ssh_admin }}"
-      state: "directory"
+    group: "{{ ssh_admin }}"
+    mode: 0700
+    path: "/home/{{ ssh_admin }}/.ssh"
+    owner: "{{ ssh_admin }}"
+    state: "directory"
 
 - name: "Agregar las llaves al administrador"
   ansible.builtin.lineinfile:
-      create: true
-      group: "{{ ssh_admin }}"
-      path: "/home/{{ ssh_admin }}/.ssh/authorized_keys"
-      search_string: "{{ item }}"
-      line: "{{ item }}"
-      owner: "{{ ssh_admin }}"
-      mode: 0600
+    create: true
+    group: "{{ ssh_admin }}"
+    path: "/home/{{ ssh_admin }}/.ssh/authorized_keys"
+    search_string: "{{ item }}"
+    line: "{{ item }}"
+    owner: "{{ ssh_admin }}"
+    mode: 0600
   loop: "{{ ssh_llaves_admin }}"
